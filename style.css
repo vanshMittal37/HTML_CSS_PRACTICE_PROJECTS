@@ -1,0 +1,213 @@
+:root{
+    --lighting-color: #0089b7;
+    --dark-color: #003d62;
+    --darker-color: #003251;
+    --secondary-color: #fff700;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body , html{
+    font-weight: 300;
+    line-height: 1.4;
+    scroll-behavior: smooth;
+    color: white;
+}
+.navbar{
+    background-color: var(--lighting-color);
+}
+.container{
+     max-width: 1200px;
+    margin: auto;
+    padding: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
+.logo{
+    font-size: 1.6rem;
+}
+.links ul{
+    display: flex;
+    gap: 2rem;
+}
+ul{
+    list-style: none;
+    font-size: 1.8rem;
+}
+ul a{
+    text-decoration: none;
+    color: white;
+}
+
+
+.container_main{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    padding: 2rem;
+}
+#home{
+    
+    background-color: var(--dark-color);
+}
+
+.hero_image{
+      animation: bounceInLeft; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s; /* don't forget to set a duration! */
+    
+}
+.hero_content{
+    display: grid;
+    place-items: center;
+    font-size: 1.6rem;
+}
+.hero_content .hi{
+    font-size: 6rem;
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+.hero_content .name{
+    font-size: 5rem;
+    font-weight: bold;
+}
+.hero_content h2{
+    font-size: 5rem;
+    font-weight: bold;
+    overflow: hidden; /* ensure that content is not revealed until the animation */
+    border-right: 0.15em solid orange; /* The typewriter cursor */
+    white-space: nowrap; /* Keep The content on a single line */
+    margin: 0 auto; /* gives that scrolling effect as the typing happens */
+    animation: typing 5s steps(40 , end) , blink-caret 0.75s step-end infinite;
+}
+@keyframes typing{
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+}
+@keyframes blink-caret {
+    from , to{
+        border-color: transparent;
+    }
+    50%{
+        border-color: orange;
+    }
+}
+#project{
+    background-color: var(--darker-color);
+}
+.project_container{
+    padding: 2rem;
+}
+.project_container .heading{
+    font-size: 4.5rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit , minmax(320px , 1fr));
+    gap: 2rem;
+    padding-top: 1rem;
+}
+.grid_item{
+    display: grid;
+    place-items: center;
+}
+.card{
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: 0.2s ease-in-out;
+}
+.card:hover{
+    transform: scale(1.05);
+    transition: 1s ease-in-out;
+}
+.card:hover img{
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+    opacity: 0.8;
+}
+.project_content a{
+    text-decoration: none;
+    text-align: center;
+    
+    font-size: 2rem;
+}
+.card:hover .project_content{
+    background-color: white;
+    color: var(--dark-color);
+    transform: translateY(0px);
+}
+.project_content{
+    padding: 2rem;
+    position: relative;
+    top: -6.5rem;
+    margin-bottom: -6.5rem;
+    transition: 0.5s ease-in-out;
+    transform: translateY(100px);
+}
+#connect{
+    background-color: var(--dark-color);
+}
+.connect_container{
+    max-width: 800px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 10rem;
+    gap: 2rem;
+}
+.connect_container h1{
+    font-size: 6rem;
+}
+.connect_container .first ,  .second{
+    display: flex;
+    gap: 2rem;
+    font-size: 3rem;
+}
+footer{
+    background-color: var(--darker-color);
+    padding: 1rem;
+}
+footer h1{
+    text-align: center;
+    font-weight: 200;
+}
+
+
+
+
+@media (max-width: 786px){
+    html{
+        font-size: 40%;
+    }
+    .container_main{
+        flex-direction: column;
+    }
+}
+@media (max-width: 500px){
+    html{
+        font-size: 32%;
+    }
+    .container_main{
+        flex-direction: column;
+    }
+}
